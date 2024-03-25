@@ -127,6 +127,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+projeto/
+
+dataset_SignLanguage1/
 
 # Spyder project settings
 .spyderproject

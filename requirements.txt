@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+tensorflow
+streamlit
+mediapipe
+pillow
+mediapipe
+opencv-python
+scikit-learn
+streamlit_webrtc
+h5py
