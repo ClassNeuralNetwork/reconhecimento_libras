@@ -4,6 +4,8 @@
   <img src="https://www.gov.br/mdh/pt-br/ondh/centrais-de-conteudo/imagens/libras.png/@@images/image" alt="Libras Logo">
 </p>
 
+Projeto da Disciplina de Topicos Especiais de Engenharia de Software (Redes Neurais) - 2023.2
+
 Este projeto visa promover a inclusão de pessoas que utilizam a linguagem de sinais, oferecendo um sistema inovador que facilita a comunicação. Utilizamos diversas ferramentas e bibliotecas avançadas para criar um sistema de reconhecimento da Linguagem Brasileira de Sinais (Libras).
 
 ## Tecnologias Utilizadas
