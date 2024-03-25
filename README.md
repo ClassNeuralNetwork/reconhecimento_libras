@@ -1,42 +1,37 @@
-Reconhecimento da Língua Brasileira de Sinais
-Projeto da Disciplina de Topicos especiais de engenharia de software
+# Reconhecimento da Língua Brasileira de Sinais
+
 <p align="center">
   <img src="https://www.gov.br/mdh/pt-br/ondh/centrais-de-conteudo/imagens/libras.png/@@images/image" alt="Libras Logo">
 </p>
 
 Este projeto visa promover a inclusão de pessoas que utilizam a linguagem de sinais, oferecendo um sistema inovador que facilita a comunicação. Utilizamos diversas ferramentas e bibliotecas avançadas para criar um sistema de reconhecimento da Linguagem Brasileira de Sinais (Libras).
 
-Tecnologias Utilizadas
-Linguagem de Programação: Python
-Bibliotecas:
-NumPy: Para operações numéricas eficientes.
-Matplotlib: Para visualização de dados e gráficos.
-Pandas: Para manipulação e análise de dados.
-Tensorflow: Para construção e treinamento de modelos de aprendizado de máquina.
-Scikit-learn (Sklearn): Para algoritmos de aprendizado de máquina e pré-processamento de dados.
-Mediapipe: Para detecção de pontos-chave em tempo real.
-OpenCV: Para processamento de imagem e vídeo.
+## Tecnologias Utilizadas
+- **Linguagem de Programação:** Python
+- **Bibliotecas:**
+  - [NumPy](https://numpy.org/): Para operações numéricas eficientes.
+  - [Matplotlib](https://matplotlib.org/): Para visualização de dados e gráficos.
+  - [Pandas](https://pandas.pydata.org/): Para manipulação e análise de dados.
+  - [Tensorflow](https://www.tensorflow.org/): Para construção e treinamento de modelos de aprendizado de máquina.
+  - [Scikit-learn (Sklearn)](https://scikit-learn.org/): Para algoritmos de aprendizado de máquina e pré-processamento de dados.
+  - [Mediapipe](https://mediapipe.dev/): Para detecção de pontos-chave em tempo real.
+  - [OpenCV](https://opencv.org/): Para processamento de imagem e vídeo.
 
-Dataset
-O dataset utilizado foi obtido do Kaggle, composto por palavras da Linguagem Brasileira de Sinais. Este conjunto de dados é fundamental para treinar e validar nosso sistema de reconhecimento.
+## Modelo de Treinamento
+Utilizamos um modelo de treinamento simétrico e uma Rede Neural do tipo Perceptron Multicamadas (MLP) para aprimorar o reconhecimento da Libras. Esse modelo visa equilibrar e otimizar a precisão do sistema.
 
-Artigo LaTeX
-O artigo LaTeX relacionado a este projeto pode ser encontrado aqui.
+## Dataset
+O dataset utilizado foi obtido do [Kaggle](https://www.kaggle.com/datasets/alvarole/brazilian-sign-language-words-recognition?resource=download), composto por palavras da Linguagem Brasileira de Sinais. Este conjunto de dados é fundamental para treinar e validar nosso sistema de reconhecimento.
 
-Referência do Dataset
-O dataset utilizado pode ser encontrado aqui.
-Brazilian Sign Language - Words Recognition
-Sign language words for image recognition
-Imagem
-Brazilian Sign Language - Words Recognition
-Sign language words for image recognition
-Imagem
-Overleaf, Online LaTeX Editor
-An online LaTeX editor that’s easy to use. No installation, real-time collaboration, version control, hundreds of LaTeX templates, and more.
-Imagem
-Contribuidores
+## Artigo LaTeX
+O artigo LaTeX relacionado a este projeto pode ser encontrado [aqui](https://www.overleaf.com/read/xccyqbgrwsbm#ceab5f).
+
+## Referência do Dataset
+O dataset utilizado pode ser encontrado [aqui](https://www.kaggle.com/datasets/alvarole/brazilian-sign-language-words-recognition?resource=download).
+
+## Contribuidores
 <table align="center">
-  <tr>
+  <tr>    
     <td align="center">
       <a href="https://github.com/franciscalorraynes">
         <img src="https://avatars.githubusercontent.com/u/104534319?v=4" 
@@ -79,4 +74,5 @@ Contribuidores
 <p align="center">
 Cada contribuidor desempenhou um papel essencial no desenvolvimento e aprimoramento deste projeto.
 </p>
+
 
