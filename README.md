@@ -14,7 +14,7 @@ Este projeto visa promover a inclusão de pessoas que utilizam a linguagem de si
 
 ## Funcionalidades Principais
 
-- ** Reconhecer sinais em LIBRAS**: o sistema é capaz de reconhecer 
+- **Reconhecer sinais em LIBRAS** : 
 
 
 ## Tecnologias Utilizadas
