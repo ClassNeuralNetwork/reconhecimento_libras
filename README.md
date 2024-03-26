@@ -12,6 +12,11 @@
 
 Este projeto visa promover a inclusão de pessoas que utilizam a linguagem de sinais, oferecendo um sistema inovador que facilita a comunicação. Utilizamos diversas ferramentas e bibliotecas avançadas para criar um sistema de reconhecimento da Linguagem Brasileira de Sinais (Libras).
 
+## Funcionalidades Principais
+
+- ** Reconhecer sinais em LIBRAS**: o sistema é capaz de reconhecer 
+
+
 ## Tecnologias Utilizadas
 - **Linguagem de Programação:** Python
 - **Bibliotecas:**
