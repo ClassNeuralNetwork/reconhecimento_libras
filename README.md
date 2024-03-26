@@ -22,7 +22,7 @@ Utilizamos um modelo de treinamento simétrico e uma Rede Neural do tipo Percept
 O dataset utilizado foi obtido do [Kaggle](https://www.kaggle.com/datasets/alvarole/brazilian-sign-language-words-recognition?resource=download), composto por palavras da Linguagem Brasileira de Sinais. Este conjunto de dados é fundamental para treinar e validar nosso sistema de reconhecimento.
 
 ## Artigo LaTeX
-O artigo LaTeX relacionado a este projeto pode ser encontrado [aqui](https://www.overleaf.com/read/xccyqbgrwsbm#ceab5f).
+O artigo LaTeX relacionado a este projeto pode ser encontrado [aqui](https://www.overleaf.com/read/qrhkyvgdthdc#da3cf9).
 
 ## Referência do Dataset
 O dataset utilizado pode ser encontrado [aqui](https://www.kaggle.com/datasets/alvarole/brazilian-sign-language-words-recognition?resource=download).
