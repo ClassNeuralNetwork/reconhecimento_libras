@@ -1,6 +1,14 @@
 # Reconhecimento da Língua Brasileira de Sinais
 
-Projeto da Disciplina de Topicos Especiais de Engenharia de Software (Redes Neurais) - 2023.2
+---
+#### Projeto da Disciplina PET1706 - TÓPICOS ESPECIAIS EM ENGENHARIA DE SOFTWARE (Redes Neurais Artificiais) - 2023.2 
+###### Professora: [Rosana Rego](https://github.com/roscibely)
+<div>
+  <img src="https://raw.githubusercontent.com/roscibely/algorithms-and-data-structure/main/root/ufersa.jpg" width="700" height="250">
+</div>
+<i> <a href="https://engsoftwarepaudosferros.ufersa.edu.br/apresentacao/"> Curso Bacharel em Engenharia de Software  </a> - UFERSA - Campus Pau dos Ferros </a></i>
+
+---
 
 Este projeto visa promover a inclusão de pessoas que utilizam a linguagem de sinais, oferecendo um sistema inovador que facilita a comunicação. Utilizamos diversas ferramentas e bibliotecas avançadas para criar um sistema de reconhecimento da Linguagem Brasileira de Sinais (Libras).
 
