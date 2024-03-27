@@ -9,7 +9,7 @@ import mediapipe as mp
 
 mp_hands = mp.solutions.hands
 
-with h5py.File('reconhecimento_libras\reconhecimento_libras\modelo\model.h5', 'r', driver='core') as f:
+with h5py.File('reconhecimento_libras/modelo/model.h5', 'r', driver='core') as f:
     model = load_model(f, compile=False)
 
 
