@@ -31,13 +31,13 @@ Este projeto visa promover a inclusão de pessoas que utilizam a linguagem de si
 1. Clone o repositório do GitHub:
 
 ```bash
-git clone https://github.com/ClassNeuralNetwork/Reconhecimento_de_Moedas.git
+git clone https://github.com/ClassNeuralNetwork/reconhecimento_libras.git
 ```
 
 2. Navegue até o diretório do projeto:
 
 ```bash
-cd Reconhecimento_de_Moedas
+cd reconhecimento_libras
 ```
 
 3. Instale as dependências usando pip:
@@ -51,19 +51,18 @@ pip install -r requirements.txt
 1. Execute o script principal do sistema:
 
 ```bash
-python main.py
+python app.py
 ```
 
-2. Carregue uma imagem contendo moedas que deseja analisar.
-
-3. Aguarde o processamento. O sistema identificará as moedas presentes na imagem e exibirá os resultados.
-
-4. Você também pode explorar outras funcionalidades disponíveis na interface, como visualizar as regiões de interesse identificadas nas moedas.
+2. Faça o gesto que deseja saber utilizando suas mãos.
+3. Aguarde o processamento. O sistema analisará as imagens das mãos e identificará as palavras correspondentes aos gestos.
+4. Os resultados serão exibidos na interface do sistema, mostrando as palavras identificadas.
 
 ## Contribuição
 
 Contribuições são bem-vindas! Se você quiser contribuir para este projeto, por favor, abra uma issue para discutir as mudanças propostas ou envie um pull request.
-## Contribuidores
+
+## Equipe
 <table align="center">
   <tr>    
     <td align="center">
@@ -109,4 +108,10 @@ Contribuições são bem-vindas! Se você quiser contribuir para este projeto, p
 Cada contribuidor desempenhou um papel essencial no desenvolvimento e aprimoramento deste projeto.
 </p>
 
+## Licença
 
+Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT). Consulte o arquivo `LICENSE` para obter mais detalhes.
+
+## Agradecimentos
+
+Agradecemos aos desenvolvedores e à comunidade de código aberto que contribuíram com ferramentas como OpenCV e scikit-learn, que tornaram possível o desenvolvimento deste sistema de identificação da Língua Brasileira de Sinais, LIBRAS.
