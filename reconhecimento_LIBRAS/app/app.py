@@ -1,10 +1,13 @@
 import cv2
 import numpy as np
 import streamlit as st
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 import mediapipe as mp
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 import h5py
+import mediapipe as mp
+
+mp_hands = mp.solutions.hands
 
 with h5py.File('model.h5', 'r', driver='core') as f:
     model = load_model(f, compile=False)
@@ -29,36 +32,46 @@ def predict_object(hand_roi):
 
 class VideoTransformer(VideoTransformerBase):
     def __init__(self):
-        pass
+        self.hands = mp_hands.Hands()
+    
+    def coordinates(self, hand_landmarks, img):
+        offset = 20
         
-    def transform(self, frame):
+        x_min = max(0, min([landmark.x for landmark in hand_landmarks.landmark]) * img.shape[1] - offset)
+        x_max = min(img.shape[1], max([landmark.x for landmark in hand_landmarks.landmark]) * img.shape[1] + offset)
+        y_min = max(0, min([landmark.y for landmark in hand_landmarks.landmark]) * img.shape[0] - offset)
+        y_max = min(img.shape[0], max([landmark.y for landmark in hand_landmarks.landmark]) * img.shape[0] + offset)
         
-        frame_bgr = np.array(frame.to_image())
+        cv2.rectangle(img, (int(x_min), int(y_min)), (int(x_max), int(y_max)), (0, 255, 0), 2)
+        
+        hand_roi = img[int(y_min):int(y_max), int(x_min):int(x_max)]
+        
+        predicted_object = predict_object(hand_roi)
+        
+        text_x = int(x_min)
+        text_y = max(0, int(y_min) - 10)
 
+        img = cv2.putText(img, predicted_object,(text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36, 255, 12), 2)
         
-        frame_rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
+
+    def transform(self, frame):
+        img = frame.to_ndarray(format="bgr24")
+
+        img = cv2.flip(img, 1)
         
-     
-        results = hands.process(frame_rgb)
+        rgb_frame = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        results = self.hands.process(rgb_frame)
+        
         if results.multi_hand_landmarks:
-            for hand_landmarks in results.multi_hand_landmarks:
-                
-                hand_points = np.array([[lmk.x, lmk.y] for lmk in hand_landmarks.landmark]).astype(np.float32)
-                xmin, ymin = np.min(hand_points, axis=0)
-                xmax, ymax = np.max(hand_points, axis=0)
-                xmin, ymin, xmax, ymax = int(xmin * frame_rgb.shape[1]), int(ymin * frame_rgb.shape[0]), \
-                                         int(xmax * frame_rgb.shape[1]), int(ymax * frame_rgb.shape[0])
-                
-                
-                hand_roi = frame_rgb[ymin:ymax, xmin:xmax]
-                
-                predicted_object = predict_object(hand_roi)
-                
-                
-                frame_rgb = cv2.putText(frame_rgb, predicted_object, (xmin, ymin - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36, 255, 12), 2)
-                print(predicted_object)
-        
-        return frame_rgb
+            fist_hand = results.multi_hand_landmarks[0]
+            self.coordinates(fist_hand, img)
+            
+            # Check if there is a second hand
+            if len(results.multi_hand_landmarks) > 1:
+                second_hand = results.multi_hand_landmarks[1]
+                self.coordinates(second_hand, img)
+            
+        return img
 
 st.sidebar.image("https://www.mjvinnovation.com/wp-content/uploads/2021/07/mjv_blogpost_redes_neurais_ilustracao_cerebro-01-1024x1020.png")
 
