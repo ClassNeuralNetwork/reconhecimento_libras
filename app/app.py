@@ -9,8 +9,15 @@ import mediapipe as mp
 
 mp_hands = mp.solutions.hands
 
-with h5py.File('reconhecimento_libras/modelo/model.h5', 'r', driver='core') as f:
-    model = load_model(f, compile=False)
+
+path = r'C:\Users\ytalo\OneDrive\Documentos\libras\reconhecimento_libras\reconhecimento_libras\modelo\modelo.h5' 
+model = load_model(path)
+
+
+#caso o seu não funcione com as linhas acima, comente elas, e descomente as linhas abaixo 
+
+# with h5py.File('caminho do seu modelo', 'r', driver='core') as f:
+#     model = load_model(f, compile=False)
 
 
 label_to_text = {0: 'bus', 1: 'bank', 2: 'car', 3: 'formation', 4: 'hospital', 5: 'I', 6: 'man', 7: 'motorcycle', 8: 'my', 9: 'supermarket', 10: 'we', 11: 'woman', 12: 'you', 13: 'you (plural)', 14: 'your'}
@@ -66,7 +73,7 @@ class VideoTransformer(VideoTransformerBase):
             fist_hand = results.multi_hand_landmarks[0]
             self.coordinates(fist_hand, img)
             
-            # Check if there is a second hand
+            #Check if there is a second hand
             if len(results.multi_hand_landmarks) > 1:
                 second_hand = results.multi_hand_landmarks[1]
                 self.coordinates(second_hand, img)
@@ -75,7 +82,7 @@ class VideoTransformer(VideoTransformerBase):
 
 st.sidebar.image("https://www.mjvinnovation.com/wp-content/uploads/2021/07/mjv_blogpost_redes_neurais_ilustracao_cerebro-01-1024x1020.png")
 
-st.sidebar.title('Reconhecimento de :red[Sinais] :ok_hand:')
+st.sidebar.title('Reconhecimento de :red[Sinais] :wave:')
 
 
 st.sidebar.info("""
@@ -84,8 +91,44 @@ st.sidebar.info("""
 Este projeto visa desenvolver um programa capaz de utilizar uma rede neural treinada para detectar mãos em tempo real por meio da câmera do usuário. Usando um modelo de rede neural CNN. 
 """)
 
+def exibir_imagem():
+    st.subheader("Imagem dos sinais")
+    num_colunas = 5
+    imagens = [
+        'assets/bank_1605967468_148.jpeg',
+        'assets/bus_1605967420_87.jpeg',
+        'assets/car_1605967469_166.jpeg',
+        'assets/formation_1605967420_969.jpeg',
+        'assets/hospital_1605967420_62.jpeg',
+        'assets/I_1605967469_110.jpeg',
+        'assets/man_1605967420_82.jpeg',
+        'assets/motorcycle_1605967415_6.jpeg',
+        'assets/my_1605967420_99.jpeg',
+        'assets/supermarket_1605967420_70.jpeg',
+        'assets/we_1605967420_78.jpeg',
+        'assets/woman_1605967469_87.jpeg',
+        'assets/you (plural)_1605967420_55.jpeg',
+        'assets/you_1605967420_63.jpeg',
+        'assets/your_1605967420_70.jpeg'
+    ]
+    legendas = [
+        'banco', 'onibus', 'carro', 'formação', 'hospital',
+        'eu', 'homem', 'motocicleta', 'Meu', 'supermercado',
+        'nos', 'mulher', 'voces', 'voce', 'sua'
+    ]
 
+    colunas = st.columns(num_colunas)
+    for i, (imagem_path, legenda) in enumerate(zip(imagens, legendas)):
+        with colunas[i % num_colunas]:
+            st.image(imagem_path, caption=legenda, width=150)
+
+
+        
 webrtc_streamer(key="hand-recognition-1", video_processor_factory=VideoTransformer)
+
+if st.button("Clique aqui para exibir as imagens"):
+    exibir_imagem()
+    
 
 
 st.sidebar.write("""
