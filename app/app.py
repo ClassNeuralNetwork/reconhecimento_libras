@@ -10,7 +10,7 @@ import mediapipe as mp
 mp_hands = mp.solutions.hands
 
 
-path = '\reconhecimento_libras\modelo\modelo.h5' 
+path = '\reconhecimento_libras\modelo\NewModel.h5' 
 model = load_model(path)
 
 
